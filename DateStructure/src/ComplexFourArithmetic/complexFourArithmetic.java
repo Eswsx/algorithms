@@ -34,6 +34,44 @@ public class complexFourArithmetic {
 		double imaginary = 0;
 		real = a.getReal() + b.getReal();
 		imaginary = a.getImaginary() + b.getImaginary();
+		System.out.println("加法的结果是");
+		print(real,imaginary);
+	}
+	public static void OperationLess(PluralObject a,PluralObject b){
+		double real = 0;
+		double imaginary = 0;
+		real = a.getReal() - b.getReal();
+		imaginary = a.getImaginary() - b.getImaginary();
+		System.out.println("减法的结果是");
+		print(real,imaginary);
+	}
+	public static void OperationExcept(PluralObject a,PluralObject b){
+		double real = 0;
+		double imaginary = 0;
+		real=(a.getReal()*b.getReal()+a.getImaginary()*b.getImaginary())/(b.getReal()*b.getReal()+b.getImaginary()*b.getImaginary());
+		imaginary=(a.getImaginary()*b.getReal()-a.getReal()*b.getImaginary())/(b.getReal()*b.getReal()+b.getImaginary()*b.getImaginary());
+		System.out.println("除法的结果是");
+		print(real,imaginary);
+	}
+	public static void OperationMul(PluralObject a,PluralObject b){
+			double real = 0;
+			double imaginary = 0;
+			double mid = 0;
+			real = a.getReal()*b.getReal()-a.getImaginary()*b.getImaginary();
+			imaginary = a.getImaginary()*b.getReal()+b.getImaginary()*a.getReal();
+			System.out.println("乘法的结果是");
+			print(real,imaginary);
+		}
+	
+	public static void main(String[] args) {
+		PluralObject a1 = new PluralObject(7,1);
+		PluralObject b1 = new PluralObject(3,4);
+		OperationAdd(a1,b1);
+		OperationLess(a1,b1);
+		OperationMul(a1,b1);
+		OperationExcept(a1,b1);
+	}
+	public static void print(double real,double imaginary){
 		if(imaginary > 0){
 			if(real != 0){
 				System.out.println(real + "+i" + imaginary);
@@ -49,15 +87,6 @@ public class complexFourArithmetic {
 				System.out.println("-i" + (-imaginary));
 			}
 		}
-	}
-	public void OperationMul(PluralObject a,PluralObject b){
-		
-		}
-	
-	public static void main(String[] args) {
-		PluralObject a1 = new PluralObject(7.7,-8);
-		PluralObject b1 = new PluralObject(-7.7,0);
-		OperationAdd(a1,b1);
 	}
 	
 }
