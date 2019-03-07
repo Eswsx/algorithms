@@ -42,21 +42,21 @@ public class LinkedListTest {
 		case 1:
 			{
 			System.out.println("This Link List is:\n");
-			print(head);
+			print(head);break;
 			}
 		case 2:
 			{
-				System.out.println("which number do you want to delete:\n");
+				System.out.println("which number do you want to delete(one):\n");
 				i = sc.nextInt();
 				deleteFistOne(head,i);
-				print(head);
+				print(head);break;
 			}
 		case 3:
 			{
-				System.out.println("which number do you want to delete:\n");
+				System.out.println("which number do you want to delete(all):\n");
 				i = sc.nextInt();
 				deleteAll(head,i);
-				print(head);
+				print(head);break;
 			}
 		case 4:
 			{
@@ -65,14 +65,14 @@ public class LinkedListTest {
 				System.out.println("modif to:\n");
 				j = sc.nextInt();
 				modify(head,i,j);
-				print(head);
+				print(head);break;
 			}
 		case 5:
 			{
 				System.out.println("which number do you want to add:\n");
 				i = sc.nextInt();
 				add(head,i);
-				print(head);
+				print(head);break;
 			}
 		}
 	}
@@ -93,10 +93,13 @@ public class LinkedListTest {
 		head.next = a;
 	}
 	public static void deleteAll(LinkList head,int deValue){
+		LinkList mid = new LinkList();
 		while(head.next!=null){
+			mid = head;
 			head = head.next;
 			if(head.value == deValue){
-				head.next = head.next.next;
+				mid.next = head.next;
+				head = mid;
 			}
 		}
 	}
@@ -109,7 +112,7 @@ public class LinkedListTest {
 			}
 		}
 	}
-	public static void modify(LinkList head,int value,int beValue){
+	public static void modify(LinkList head,int beValue,int value){
 		while(head.next!=null){
 			head = head.next;
 			if(head.value == beValue){
