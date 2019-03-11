@@ -16,18 +16,18 @@ public class NumberOfCalculation {
 		int number  = sc.nextInt();
 		int log = 0;
 		int num = 0;
+		int a = 0 ;
 		for(int i=0;i<=number;i++){
 			num = i;
-			System.out.println("num1:"+num);
-			while(num>0){
-				if(num==key || (num!=key*10&&num/10==key) ){
-					log++;
-					System.out.println("num2:"+num);
-					System.out.println("log:"+log);
-					System.out.println("-------");
+			while(num>=0){
+				if(num<10){
+					if(num == key)log++;
+					break;
+				}else{
+					a = num%10;
+					if(a == key)log++;
+					num/=10;
 				}
-				num/=10;
-				System.out.println("num3:"+num);
 			}
 		}
 		System.out.println(key + "的个数是：" + log);
