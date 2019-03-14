@@ -1,12 +1,14 @@
 package ComplexFourArithmetic;
-
+/*
+ * 在数组中找到第 k 大的元素。
+ */
 public class FindBigest2 {
 	public static void main(String[] args) {
 		int[] a = new int[]{1,3,4,2};
 		int k = 1;
 		a = sort(a,0,a.length-1);
-//		for(int i=0;i<a.length;i++){	
-//		System.out.print(a[i]);}
+//		for(int i=0;i<a.length;i++)
+//			System.out.print(a[i]);
 		System.out.println(a[a.length-k]);
 	}
 	public static int[] sort(int[] a,int left,int right){
